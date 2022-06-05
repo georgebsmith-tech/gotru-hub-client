@@ -547,7 +547,7 @@ th {
 
   color: #444a47;
   cursor: pointer;
-
+}
 .grid3 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

@@ -63,7 +63,7 @@ export const DeskModeContent = () => {
             <h3>Cart</h3>
           </section>
 
-          <table>
+          <table className="cartTable">
             <thead>
               <th>Product</th>
               <th>Qty added</th>

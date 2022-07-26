@@ -11,7 +11,7 @@ export default function Details({}) {
 
   const body = {
     email,
-    password,
+    password
   };
   console.log(body);
   const notify = (message) => toast(message);
@@ -26,7 +26,7 @@ export default function Details({}) {
       {
         method: "POST",
         body: JSON.stringify(body),
-        headers: { "Content-type": "application/json" },
+        headers: { "Content-type": "application/json" }
       }
     );
     const data = await resp.json();
@@ -35,7 +35,6 @@ export default function Details({}) {
       return;
     }
 
-    console.log(data.token);
     localStorage.setItem("token", data.token);
 
     navigate("/dashboard");
@@ -49,15 +48,15 @@ export default function Details({}) {
           style: {
             border: "1px solid rgba(145, 64, 64, 1)",
             padding: "16px",
-            color: "rgba(145, 64, 64, 1)",
-          },
+            color: "rgba(145, 64, 64, 1)"
+          }
         }}
       />
       <section className="manage">
         <h3>Login to manage your company</h3>
       </section>
       <section className="formact">
-        <div className="type">
+        <div className="type" style={{ marginBottom: 30 }}>
           <p>Email Address</p>
           <input
             type="text"
@@ -68,8 +67,40 @@ export default function Details({}) {
             }}
           />
         </div>
+        <div className="">
+          <p>Password</p>
+          <div style={{ position: "relative" }} className="type">
+            <input
+              type={encrypted ? "password" : "text"}
+              placeholder="Enter a password"
+              value={password}
+              onChange={(e) => {
+                setPassword(e.target.value);
+              }}
+            />
+            <div
+              className="pointer"
+              onClick={() => setEncrypted(!encrypted)}
+              style={{
+                position: "absolute",
+                right: 19.89,
+                // backgroundColor: "red",
+                top: 0,
+                height: "100%",
+                display: "flex",
+                alignItems: "center"
+              }}
+            >
+              {!encrypted ? (
+                <img src="./images/see.svg" />
+              ) : (
+                <img src="./images/encrypt.svg" />
+              )}
+            </div>
+          </div>
+        </div>
 
-        <div className="type pist">
+        {/* <div className="type pist">
           <label>Password</label>
           <div className="pistHold">
             <input
@@ -92,7 +123,7 @@ export default function Details({}) {
               />
             )}
           </div>
-        </div>
+        </div> */}
         <div className="forgot">
           <p>
             Forgot Password?

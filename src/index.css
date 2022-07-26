@@ -2488,7 +2488,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   grid-template-columns: 1.2fr 1fr;
   column-gap: 12px;
   width: 100%;
-  overflow-x: auto;
+  /* overflow-x: auto; */
 }
 
 .sumProducts {
@@ -2555,15 +2555,27 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .deskgridOne {
   background-color: #ffff;
+  overflow-x: auto;
 }
 .cart {
   background-color: #ffff;
+  overflow-x: auto;
+}
+
+.cartTable {
+  width: 100%;
 }
 
 .deskModeSort {
   display: flex;
   align-items: center;
   column-gap: 8px;
+}
+
+.deskgridProduct > h3 {
+  padding-bottom: 25px;
+  display: flex;
+  align-items: center;
 }
 
 .deskgridProduct {

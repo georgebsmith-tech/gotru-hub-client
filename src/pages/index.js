@@ -16,3 +16,4 @@ export * from "./ProductList";
 export * from "./NewService";
 export * from "./Wallet";
 export * from "./Notifications";
+export * from "./Home";

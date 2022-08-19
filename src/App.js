@@ -17,6 +17,7 @@ import {
   Settings,
   Wallet,
   DeskMode,
+  Home
 } from "./pages";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
@@ -29,8 +30,8 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Signin />}></Route>
-
+        <Route path="/" element={<Home />} />
+        <Route path="/sign-in" element={<Signin />} />
         <Route path="dashboard" element={<Dashbaord />} />
         <Route path="stocks-inventory" element={<StocksInventory />} />
         <Route path="attendance" element={<Attendance />} />
@@ -40,7 +41,6 @@ function App() {
         <Route path="new-service-box" element={<NewServiceBox />} />
         <Route path="sales-modal" element={<SalesModal />} />
         <Route path="desk-mode" element={<DeskMode />} />
-
         <Route path="attendance-history" element={<AttendanceHistory />} />
         <Route path="customer-report" element={<CustomerReport />} />
         <Route path="customer-profile" element={<CustomerProfile />} />

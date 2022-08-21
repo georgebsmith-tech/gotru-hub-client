@@ -1,4 +1,5 @@
 import { Button } from "../../FormElements/Button";
+import { ButtonLink } from "../../FormElements/ButtonLink";
 
 export const Manage = ({ img, title, text = "", features = [], action }) => {
   return (
@@ -19,7 +20,8 @@ export const Manage = ({ img, title, text = "", features = [], action }) => {
             </li>
           ))}
         </ul>
-        <Button
+        <ButtonLink
+          link="/sign-up-biz-types"
           style={{
             backgroundColor: "#19201D",
             color: "#fff",

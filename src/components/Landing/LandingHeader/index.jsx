@@ -9,18 +9,18 @@ export const LandingHeader = () => {
       }}
       className="flex justify-between align-center"
     >
-      <div>
+      <Link to="/">
         <img src="/images/logo-white.svg" />
-      </div>
+      </Link>
       <div>
         <Link to="/about" style={{ marginRight: "12vw", color: "#fff" }}>
           About us
         </Link>
-        <Link to="/login" style={{ marginRight: "5vw", color: "#fff" }}>
+        <Link to="/sign-in" style={{ marginRight: "5vw", color: "#fff" }}>
           Login
         </Link>
         <Link
-          to="/login"
+          to="/sign-up-biz-types"
           style={{
             padding: "15px 25px",
             border: "1px solid #fff",

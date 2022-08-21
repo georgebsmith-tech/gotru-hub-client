@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button } from "../../components";
+import { Button, ButtonLink } from "../../components";
 import { ManageAttendance, ManageStore } from "../../components/Home_";
 import { useUser } from "../../hooks";
 import { Link } from "react-router-dom";
@@ -60,7 +60,8 @@ export const Home = () => {
         </p>
       </div>
       <div className="center">
-        <Button
+        <ButtonLink
+          link="/sign-up-biz-types"
           style={{
             backgroundColor: "#19201D",
             color: "#fff",

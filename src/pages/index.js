@@ -17,3 +17,9 @@ export * from "./NewService";
 export * from "./Wallet";
 export * from "./Notifications";
 export * from "./Home";
+
+//landing
+export * from "./SignUp-BizType";
+export * from "./SignUp-BigBusiness";
+export * from "./SignUp-SmallBusiness";
+export * from "./SignUp-Referral";

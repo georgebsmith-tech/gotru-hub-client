@@ -15,7 +15,7 @@ export * from "./modals/RegisterUserModal";
 export * from "./PageContents/ManageUsersContent";
 export * from "./PageContents/AttendanceHistoryContent";
 export * from "./PageContents/AttendanceContent";
-export * from "./modals//ConfigureUserTableModal";
+export * from "./modals/ConfigureUserTableModal";
 export * from "./FormElements/InputWithVis";
 export * from "./ManageUserDropDown";
 export * from "./modals/NewMessageModal";
@@ -38,6 +38,9 @@ export * from "./EditTime";
 export * from "./ConfigureTable";
 export * from "./Helpers/TableNav";
 
+//form elements
+export * from "./FormElements/ButtonLink";
+
 export * from "./ProductListContent";
 export * from "./SalesRegister";
 export * from "./SalesFilter";
@@ -59,3 +62,6 @@ export * from "./PageContents/WalletContent";
 export * from "./Table";
 export * from "./HardwareIntegration";
 export * from "./RulesAndPermission";
+
+//helpers
+export * from "./Helpers/FlexRow";

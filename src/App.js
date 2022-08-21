@@ -17,7 +17,11 @@ import {
   Settings,
   Wallet,
   DeskMode,
-  Home
+  Home,
+  BuisnessType,
+  SignUpBigBiz,
+  SignUpSmallBiz,
+  SignUpReferral
 } from "./pages";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
@@ -49,6 +53,13 @@ function App() {
         <Route path="notifications" element={<Notifications />} />
         <Route path="settings" element={<Settings />} />
         <Route path="wallet" element={<Wallet />} />
+
+        {/* landing pages  */}
+
+        <Route path="sign-up-biz-types" element={<BuisnessType />} />
+        <Route path="sign-up-big-biz" element={<SignUpBigBiz />} />
+        <Route path="sign-up-small-biz" element={<SignUpSmallBiz />} />
+        <Route path="sign-up-referral" element={<SignUpReferral />} />
       </Routes>
     </BrowserRouter>
   );

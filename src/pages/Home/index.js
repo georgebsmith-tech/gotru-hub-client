@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Button } from "../../components";
 import { ManageAttendance, ManageStore } from "../../components/Home_";
 import { useUser } from "../../hooks";
-
+import { Link } from "react-router-dom";
 export const Home = () => {
   const [manageTab, setManageTab] = useState(0);
   const user = useUser();
@@ -35,10 +35,42 @@ export const Home = () => {
       style={{
         backgroundColor: "#fff",
         width: "100vw",
-        minHeight: "100vh",
-        paddingTop: 152
+        minHeight: "100vh"
       }}
     >
+      <header
+        style={{
+          padding: "31px 6vw",
+          backgroundColor: "#19201D",
+          marginBottom: 152
+        }}
+        className="flex justify-between align-center"
+      >
+        <div>
+          <img src="/images/logo-white.svg" />
+        </div>
+        <div>
+          <Link to="/about" style={{ marginRight: "12vw", color: "#fff" }}>
+            About us
+          </Link>
+          <Link to="/login" style={{ marginRight: "5vw", color: "#fff" }}>
+            Login
+          </Link>
+          <Link
+            to="/login"
+            style={{
+              padding: "15px 25px",
+              border: "1px solid #fff",
+              borderradius: 8,
+              height: "fit-content",
+              color: "white",
+              borderRadius: 8
+            }}
+          >
+            Sign Up
+          </Link>
+        </div>
+      </header>
       <h1
         style={{
           color: "#19201D",
@@ -173,6 +205,66 @@ export const Home = () => {
           ))}
         </ul>
       </div>
+      <div
+        style={{ marginTop: 200, marginBottom: 80 }}
+        className="flex-col align-center pb-[90px]"
+      >
+        <h2
+          style={{
+            color: "#19201D",
+            textAlign: "center",
+            fontSize: 48,
+            padding: "0 10vw",
+            fontFamily: "Circular Std",
+            fontWeight: "700",
+            maxWidth: 1100
+          }}
+        >
+          Sign up with Gotru hub to start managing your team
+        </h2>
+        <div className="center" style={{ marginTop: 24, marginBottom: 32 }}>
+          <p style={{ textAlign: "center", maxWidth: 580, lineHeight: 1.6 }}>
+            Create account instantly to start managing your team and resources
+          </p>
+        </div>
+        <div>
+          <Button
+            style={{
+              padding: "16px 32px",
+              backgroundColor: "#19201D",
+              color: "#fff"
+            }}
+            title="Get Started with Gotru hub"
+          />
+        </div>
+      </div>
+      <footer
+        style={{ padding: 60, backgroundColor: "#19201D" }}
+        className="flex flex-col align-center"
+      >
+        <div>
+          <img src="/images/logo-white.svg" />
+        </div>
+        <div style={{ marginTop: 50 }}>
+          <ul className="flex">
+            {[{ title: "Terms of service" }, { title: "Privacy policy" }].map(
+              (page, idx) => (
+                <li
+                  style={{
+                    padding: "0 24px",
+                    borderRight:
+                      idx == 0 ? "1px solid #444A47" : "1px solid transparent"
+                  }}
+                >
+                  <Link to="#" style={{ color: "white" }}>
+                    {page.title}
+                  </Link>
+                </li>
+              )
+            )}
+          </ul>
+        </div>
+      </footer>
     </main>
   );
 };

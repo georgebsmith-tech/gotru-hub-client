@@ -13,8 +13,8 @@ export const LandingHeader = () => {
         <img src="/images/logo-white.svg" />
       </Link>
       <div>
-        <Link to="/about" style={{ marginRight: "12vw", color: "#fff" }}>
-          About us
+        <Link to="/contact-us" style={{ marginRight: "12vw", color: "#fff" }}>
+          Contact us
         </Link>
         <Link to="/sign-in" style={{ marginRight: "5vw", color: "#fff" }}>
           Login

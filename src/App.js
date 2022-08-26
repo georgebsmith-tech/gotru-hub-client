@@ -20,7 +20,6 @@ import {
   Home,
   BuisnessType,
   SignUpBigBiz,
-  SignUpSmallBiz,
   SignUpReferral
 } from "./pages";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -29,6 +28,7 @@ import { NewServiceBox } from "./pages/NewServiceBox";
 import { CustomerReport, SalesRegister } from "./components";
 import { SalesModal } from "./components/modals";
 import { socket } from "./config/socket.config";
+import { PersonalBiz } from "./pages/SignUp-PersonalBiz";
 
 function App() {
   return (
@@ -58,7 +58,9 @@ function App() {
 
         <Route path="sign-up-biz-types" element={<BuisnessType />} />
         <Route path="sign-up-big-biz" element={<SignUpBigBiz />} />
-        <Route path="sign-up-small-biz" element={<SignUpSmallBiz />} />
+        <Route path="sign-up-small-biz" element={<PersonalBiz />} />
+        <Route path="sign-up-govt-inst" element={<PersonalBiz />} />
+
         <Route path="sign-up-referral" element={<SignUpReferral />} />
       </Routes>
     </BrowserRouter>

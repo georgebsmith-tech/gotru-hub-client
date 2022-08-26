@@ -4,7 +4,7 @@ import { ManageAttendance, ManageStore } from "../../components/Home_";
 import { useUser } from "../../hooks";
 import { Link } from "react-router-dom";
 import { LandingHeader } from "../../components/Landing";
-export const SignUpSmallBiz = () => {
+export const SignUpGovtInst = () => {
   return (
     <main
       style={{
@@ -29,7 +29,7 @@ export const SignUpSmallBiz = () => {
               textAlign: "center"
             }}
           >
-            Register Organization- Big Business
+            Personal Businesses
           </h1>
           <div>
             <FlexRow>

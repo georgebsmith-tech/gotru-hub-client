@@ -60,14 +60,19 @@ export const BuisnessType = () => {
             <ul>
               {[
                 {
-                  title: "Big Bussiness",
+                  title: "Registered Organizations",
                   text: "Companies with Registered CAC",
                   link: "/sign-up-big-biz"
                 },
                 {
-                  title: "Small Business",
-                  text: "Companies with Registered CAC",
+                  title: "Personal Businesses",
+                  text: "Businesses not registered",
                   link: "/sign-up-small-biz"
+                },
+                {
+                  title: "Government Institutions",
+                  text: "Government Agencies and Ministries",
+                  link: "/sign-up-govt-inst"
                 }
               ].map((type, idx) => (
                 <li
@@ -81,7 +86,13 @@ export const BuisnessType = () => {
                   className="pointer hover"
                 >
                   <Link to={type.link}>
-                    <h3 style={{ marginBottom: 8, color: "#19201D" }}>
+                    <h3
+                      style={{
+                        marginBottom: 8,
+                        color: "#19201D",
+                        fontSize: 24
+                      }}
+                    >
                       {type.title}
                     </h3>
                     <p style={{ color: "#6F7975" }}>{type.text}</p>
@@ -89,6 +100,9 @@ export const BuisnessType = () => {
                 </li>
               ))}
             </ul>
+          </div>
+          <div className="center" style={{ marginTop: 48, paddingBottom: 100 }}>
+            <p>Already have an account? Sign in</p>
           </div>
         </div>
       </div>

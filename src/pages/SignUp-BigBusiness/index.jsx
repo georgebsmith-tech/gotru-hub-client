@@ -1,10 +1,43 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { Button, FlexRow, Input } from "../../components";
 import { ManageAttendance, ManageStore } from "../../components/Home_";
 import { useUser } from "../../hooks";
 import { Link } from "react-router-dom";
 import { LandingHeader } from "../../components/Landing";
 export const SignUpBigBiz = () => {
+  const [cacImage, setCacImage] = useState(null);
+  const [opLicenceImage, setOpLicenceImage] = useState(null);
+  const [cacPreview, setcacPreview] = useState(null);
+  const [opLicencePreview, setOpLicenecePreview] = useState(null);
+  const previews = [cacPreview, opLicencePreview];
+  console.log(previews);
+
+  const cacImageRef = useRef();
+  const opLicenceImageRef = useRef();
+
+  const uploadCac = () => {
+    cacImageRef?.current?.click();
+  };
+  const uploadOpLicence = () => {
+    opLicenceImageRef?.current?.click();
+  };
+  const handleImageChange = (image, kind) => {
+    if (image[0]) {
+      if (kind == "cac") {
+        setCacImage(image[0]);
+        const path = URL.createObjectURL(image[0]);
+        console.log(path);
+        setcacPreview(path);
+      } else {
+        setOpLicenceImage(image[0]);
+
+        const path = URL.createObjectURL(image[0]);
+        setOpLicenecePreview(path);
+        console.log(path);
+      }
+    }
+  };
+
   return (
     <main
       style={{
@@ -105,46 +138,72 @@ export const SignUpBigBiz = () => {
             <ul className="flex" style={{ columnGap: "2vw" }}>
               {[
                 {
-                  title: "Certificate of Incorporation with",
-                  text: "CAC Number"
+                  title: "Certificate of Incorporation with CAC Number",
+
+                  action: uploadCac
                 },
                 {
-                  title: "Small Business",
-                  text: "Companies with Registered CAC"
+                  title: "Operational License",
+
+                  action: uploadOpLicence
                 }
               ].map((type, idx) => (
                 <li
+                  key={idx}
+                  onClick={type.action}
                   style={{
-                    padding: 31,
+                    padding: previews[idx] ? 4 : 31,
                     border: "1px dashed #D5D7E4",
                     backgroundColor: "#fff",
                     borderRadius: 4,
                     marginBottom: 24,
-                    flex: 1
+                    flex: 1,
+                    maxHeight: 150
                   }}
                   className="pointer hover"
                 >
-                  <Link to="#">
-                    <h3
+                  {previews[idx] ? (
+                    <img
+                      src={previews[idx]}
                       style={{
-                        marginBottom: 8,
-                        color: "#19201D",
-                        textAlign: "center"
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "contain"
                       }}
-                      className="f12"
-                    >
-                      {type.title}
-                    </h3>
-                    <p
-                      style={{ color: "#19201D", textAlign: "center" }}
-                      className="f12"
-                    >
-                      {type.text}
-                    </p>
-                  </Link>
+                    />
+                  ) : (
+                    <div className="center">
+                      <h3
+                        style={{
+                          marginBottom: 8,
+                          color: "#19201D",
+                          textAlign: "center",
+                          width: 170
+                        }}
+                        className="f12"
+                      >
+                        {type.title}
+                      </h3>
+                    </div>
+                  )}
                 </li>
               ))}
             </ul>
+            {/* refs */}
+            <input
+              accept=".png,.jpg"
+              type="file"
+              ref={cacImageRef}
+              onChange={(e) => handleImageChange(e.target.files, "cac")}
+              style={{ display: "none" }}
+            />
+            <input
+              accept=".png,.jpg"
+              type="file"
+              ref={opLicenceImageRef}
+              onChange={(e) => handleImageChange(e.target.files, "opLic")}
+              style={{ display: "none" }}
+            />
             <Button
               title="Proceed"
               style={{

@@ -20,7 +20,8 @@ import {
   Home,
   BuisnessType,
   SignUpBigBiz,
-  SignUpReferral
+  SignUpReferral,
+  ContactUs
 } from "./pages";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
@@ -60,6 +61,7 @@ function App() {
         <Route path="sign-up-big-biz" element={<SignUpBigBiz />} />
         <Route path="sign-up-small-biz" element={<PersonalBiz />} />
         <Route path="sign-up-govt-inst" element={<PersonalBiz />} />
+        <Route path="contact-us" element={<ContactUs />} />
 
         <Route path="sign-up-referral" element={<SignUpReferral />} />
       </Routes>

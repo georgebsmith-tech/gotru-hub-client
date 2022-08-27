@@ -198,7 +198,8 @@ export const Home = () => {
           </p>
         </div>
         <div>
-          <Button
+          <ButtonLink
+            link="/sign-up-biz-types"
             style={{
               padding: "16px 32px",
               backgroundColor: "#19201D",

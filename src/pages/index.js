@@ -24,3 +24,4 @@ export * from "./SignUp-BigBusiness";
 export * from "./SignUp-PersonalBiz";
 export * from "./SignUp-Referral";
 export * from "./SignUp-Govt";
+export * from "./ContactUs";

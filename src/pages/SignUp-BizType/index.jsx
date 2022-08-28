@@ -4,6 +4,7 @@ import { ManageAttendance, ManageStore } from "../../components/Home_";
 import { useUser } from "../../hooks";
 import { Link } from "react-router-dom";
 import { LandingHeader } from "../../components/Landing";
+import styles from "./Index.module.css";
 export const BuisnessType = () => {
   const [manageTab, setManageTab] = useState(0);
   const user = useUser();
@@ -40,7 +41,7 @@ export const BuisnessType = () => {
       }}
     >
       <LandingHeader />
-      <div className="center">
+      <div className="center" style={{ padding: "0 8vw" }}>
         <div style={{ maxWidth: 490 }}>
           <h1
             style={{
@@ -82,14 +83,13 @@ export const BuisnessType = () => {
                     borderRadius: 4,
                     marginBottom: 24
                   }}
-                  className="pointer hover"
+                  className={`pointer hover ${styles.types}`}
                 >
                   <Link to={type.link}>
                     <h3
                       style={{
                         marginBottom: 8,
-                        color: "#19201D",
-                        fontSize: 24
+                        color: "#19201D"
                       }}
                     >
                       {type.title}

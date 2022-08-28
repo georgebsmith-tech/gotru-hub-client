@@ -1,16 +1,17 @@
 import { Button } from "../../FormElements/Button";
 import { ButtonLink } from "../../FormElements/ButtonLink";
+import styles from "./Index.module.css";
 
 export const Manage = ({ img, title, text = "", features = [], action }) => {
   return (
     <div
-      style={{ padding: "0 7vw", marginTop: 57, columnGap: "4vw" }}
-      className="flex justify-between"
+      style={{ padding: "0 7vw", marginTop: 57, columnGap: "2vw" }}
+      className={styles.attendanceContainer}
     >
-      <div style={{ marginBottom: 11 }}>
-        <img src={`/images/${img}.svg`} />
+      <div style={{ marginBottom: 11, flex: 1 }}>
+        <img src={`/images/${img}.svg`} style={{ maxWidth: "100%" }} />
       </div>
-      <div>
+      <div style={{ flex: 1 }}>
         <h3 style={{ fontSize: 32 }}>{title}</h3>
         <p style={{ color: "#444A47", marginTop: 16 }}>{text}</p>
         <ul style={{ marginTop: 24, marginBottom: 34 }}>

@@ -1,4 +1,6 @@
+import { Box, Stack } from "@mui/material";
 import { Link } from "react-router-dom";
+import styles from "./Index.module.css";
 export const LandingHeader = () => {
   return (
     <header
@@ -12,7 +14,14 @@ export const LandingHeader = () => {
       <Link to="/">
         <img src="/images/logo-white.svg" />
       </Link>
-      <div>
+      {/* harmburger menu
+       */}
+      <Stack className="flex flex-col" spacing={"6px"} className="pointer">
+        {[1, 2, 3].map((item, idx) => (
+          <Box sx={{ height: "2px", backgroundColor: "#fff", width: "25px" }} />
+        ))}
+      </Stack>
+      <div className={styles.mobileHide}>
         <Link to="/contact-us" style={{ marginRight: "12vw", color: "#fff" }}>
           Contact us
         </Link>

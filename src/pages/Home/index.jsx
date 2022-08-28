@@ -4,6 +4,7 @@ import { ManageAttendance, ManageStore } from "../../components/Home_";
 import { useUser } from "../../hooks";
 import { Link } from "react-router-dom";
 import { LandingHeader } from "../../components/Landing";
+import styles from "./Index.module.css";
 export const Home = () => {
   const [manageTab, setManageTab] = useState(0);
   const user = useUser();
@@ -41,10 +42,11 @@ export const Home = () => {
     >
       <LandingHeader />
       <h1
+        className={styles.headings}
         style={{
           color: "#19201D",
           textAlign: "center",
-          fontSize: 48,
+
           padding: "0 10vw",
 
           fontWeight: "700"
@@ -52,7 +54,10 @@ export const Home = () => {
       >
         Manage your mega stores, employees and team members, all in one app
       </h1>
-      <div className="center" style={{ marginTop: 24, marginBottom: 32 }}>
+      <div
+        className={`center ${styles.container}`}
+        style={{ marginTop: 24, marginBottom: 32 }}
+      >
         <p style={{ textAlign: "center", maxWidth: 650, lineHeight: 1.6 }}>
           Go tru hub allow you manage your mega store, your team as well as your
           employees, we provide you with tools that help you generate revenue
@@ -82,16 +87,20 @@ export const Home = () => {
           style={{
             color: "#19201D",
             textAlign: "center",
-            fontSize: 48,
+
             padding: "0 10vw",
 
             fontWeight: "700",
             maxWidth: 1100
           }}
+          className={styles.headings}
         >
           We’re all about helping you manage your organization
         </h2>
-        <div className="center" style={{ marginTop: 24, marginBottom: 32 }}>
+        <div
+          className={`center ${styles.container}`}
+          style={{ marginTop: 24, marginBottom: 32 }}
+        >
           <p style={{ textAlign: "center", maxWidth: 580, lineHeight: 1.6 }}>
             Our product is aimed at simplyifying the organization management
             process and helping you keep track of team activities
@@ -133,9 +142,10 @@ export const Home = () => {
       >
         <div className="center" style={{ marginBottom: 82 }}>
           <h2
+            className={styles.headings}
             style={{
               color: "#fff",
-              fontSize: 48,
+
               maxWidth: 600,
               textAlign: "center"
             }}
@@ -143,7 +153,7 @@ export const Home = () => {
             Why Organizations choose Gotru hub for their staffs
           </h2>
         </div>
-        <ul className="flex" style={{ columnGap: 32 }}>
+        <ul style={{ columnGap: 32 }} className={styles.services}>
           {services.map((item, idx) => (
             <li key={idx}>
               <div className="flex-col align-center ">
@@ -180,10 +190,11 @@ export const Home = () => {
         className="flex-col align-center pb-[90px]"
       >
         <h2
+          className={styles.headings}
           style={{
             color: "#19201D",
             textAlign: "center",
-            fontSize: 48,
+
             padding: "0 10vw",
 
             fontWeight: "700",
@@ -192,7 +203,10 @@ export const Home = () => {
         >
           Sign up with Gotru hub to start managing your team
         </h2>
-        <div className="center" style={{ marginTop: 24, marginBottom: 32 }}>
+        <div
+          className={`center ${styles.container}`}
+          style={{ marginTop: 24, marginBottom: 32 }}
+        >
           <p style={{ textAlign: "center", maxWidth: 580, lineHeight: 1.6 }}>
             Create account instantly to start managing your team and resources
           </p>
@@ -227,7 +241,7 @@ export const Home = () => {
                       idx == 0 ? "1px solid #444A47" : "1px solid transparent"
                   }}
                 >
-                  <Link to="#" style={{ color: "white" }}>
+                  <Link to="#" style={{ color: "white", whiteSpace: "nowrap" }}>
                     {page.title}
                   </Link>
                 </li>

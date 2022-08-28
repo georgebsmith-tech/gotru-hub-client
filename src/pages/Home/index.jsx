@@ -46,7 +46,7 @@ export const Home = () => {
           textAlign: "center",
           fontSize: 48,
           padding: "0 10vw",
-          fontFamily: "Circular Std",
+
           fontWeight: "700"
         }}
       >
@@ -84,7 +84,7 @@ export const Home = () => {
             textAlign: "center",
             fontSize: 48,
             padding: "0 10vw",
-            fontFamily: "Circular Std",
+
             fontWeight: "700",
             maxWidth: 1100
           }}
@@ -185,7 +185,7 @@ export const Home = () => {
             textAlign: "center",
             fontSize: 48,
             padding: "0 10vw",
-            fontFamily: "Circular Std",
+
             fontWeight: "700",
             maxWidth: 1100
           }}

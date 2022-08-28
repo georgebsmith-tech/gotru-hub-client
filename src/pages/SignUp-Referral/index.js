@@ -22,7 +22,6 @@ export const SignUpReferral = () => {
 
               fontSize: 24,
 
-              fontFamily: "Circular Std",
               fontWeight: "700",
 
               marginBottom: 40,

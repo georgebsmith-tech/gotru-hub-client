@@ -7,10 +7,8 @@ import { LandingHeader } from "../../components/Landing";
 export const SignUpBigBiz = () => {
   const [cacImage, setCacImage] = useState(null);
   const [opLicenceImage, setOpLicenceImage] = useState(null);
-  const [cacPreview, setcacPreview] = useState(null);
-  const [opLicencePreview, setOpLicenecePreview] = useState(null);
-  const previews = [cacPreview, opLicencePreview];
-  console.log(previews);
+
+  const docs = [cacImage, opLicenceImage];
 
   const cacImageRef = useRef();
   const opLicenceImageRef = useRef();
@@ -25,15 +23,8 @@ export const SignUpBigBiz = () => {
     if (image[0]) {
       if (kind == "cac") {
         setCacImage(image[0]);
-        const path = URL.createObjectURL(image[0]);
-        console.log(path);
-        setcacPreview(path);
       } else {
         setOpLicenceImage(image[0]);
-
-        const path = URL.createObjectURL(image[0]);
-        setOpLicenecePreview(path);
-        console.log(path);
       }
     }
   };
@@ -55,14 +46,13 @@ export const SignUpBigBiz = () => {
 
               fontSize: 24,
 
-              fontFamily: "Circular Std",
               fontWeight: "700",
 
               marginBottom: 40,
               textAlign: "center"
             }}
           >
-            Register Organization- Big Business
+            Register Organization
           </h1>
           <div>
             <FlexRow>
@@ -140,65 +130,73 @@ export const SignUpBigBiz = () => {
                 {
                   title: "Certificate of Incorporation with CAC Number",
 
-                  action: uploadCac
+                  action: uploadCac,
+                  delete: () => setCacImage(null)
                 },
                 {
                   title: "Operational License",
 
-                  action: uploadOpLicence
+                  action: uploadOpLicence,
+                  delete: () => setOpLicenceImage(null)
                 }
               ].map((type, idx) => (
                 <li
                   key={idx}
-                  onClick={type.action}
+                  onClick={() => {
+                    if (!docs[idx]) type.action();
+                  }}
                   style={{
-                    padding: previews[idx] ? 4 : 31,
                     border: "1px dashed #D5D7E4",
                     backgroundColor: "#fff",
                     borderRadius: 4,
                     marginBottom: 24,
                     flex: 1,
-                    maxHeight: 150
+                    height: 100
                   }}
-                  className="pointer hover"
+                  className={"hover center " + (!docs[idx] && "pointer")}
                 >
-                  {previews[idx] ? (
-                    <img
-                      src={previews[idx]}
+                  <div className="center" style={{ position: "relative" }}>
+                    <h3
                       style={{
-                        width: "100%",
-                        height: "100%",
-                        objectFit: "contain"
+                        marginBottom: 8,
+                        color: "rgba(111, 121, 117, 1)",
+
+                        width: 170
                       }}
-                    />
-                  ) : (
-                    <div className="center">
-                      <h3
-                        style={{
-                          marginBottom: 8,
-                          color: "#19201D",
-                          textAlign: "center",
-                          width: 170
-                        }}
-                        className="f12"
-                      >
-                        {type.title}
-                      </h3>
+                      className="f12"
+                    >
+                      {docs[idx] ? docs[idx]?.name : type.title + " (pdf only)"}
+                    </h3>
+                    <div style={{ position: "absolute", left: -50 }}>
+                      {docs[idx] ? (
+                        <img src="/images/pdf-file .svg" />
+                      ) : (
+                        <img src="/images/upload.svg" />
+                      )}
                     </div>
-                  )}
+                    {docs[idx] && (
+                      <div
+                        onClick={type.delete}
+                        style={{ position: "absolute", right: -50 }}
+                        className="pointer"
+                      >
+                        <img src="/images/Delete.svg" />
+                      </div>
+                    )}
+                  </div>
                 </li>
               ))}
             </ul>
             {/* refs */}
             <input
-              accept=".png,.jpg"
+              accept=".pdf"
               type="file"
               ref={cacImageRef}
               onChange={(e) => handleImageChange(e.target.files, "cac")}
               style={{ display: "none" }}
             />
             <input
-              accept=".png,.jpg"
+              accept=".pdf"
               type="file"
               ref={opLicenceImageRef}
               onChange={(e) => handleImageChange(e.target.files, "opLic")}

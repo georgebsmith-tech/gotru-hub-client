@@ -62,12 +62,23 @@ export const ContactUs = () => {
             textAlign: "center",
             fontSize: 48,
             padding: "0 10vw",
-            fontFamily: "Circular Std",
-            fontWeight: "700",
-            maxWidth: 800
+
+            fontWeight: "700"
           }}
         >
-          Sign up with Gotru hub to start managing your team
+          Sign up with Gotru hub
+        </h2>
+        <h2
+          style={{
+            color: "#19201D",
+            textAlign: "center",
+            fontSize: 48,
+            padding: "0 10vw",
+
+            fontWeight: "700"
+          }}
+        >
+          to start managing your team
         </h2>
         <div className="center" style={{ marginTop: 24, marginBottom: 32 }}>
           <p style={{ textAlign: "center", maxWidth: 580, lineHeight: 1.6 }}>

@@ -48,7 +48,6 @@ export const BuisnessType = () => {
 
               fontSize: 24,
 
-              fontFamily: "Circular Std",
               fontWeight: "700",
               maxWidth: 400,
               marginBottom: 40

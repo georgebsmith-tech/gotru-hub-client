@@ -56,13 +56,11 @@ function App() {
         <Route path="wallet" element={<Wallet />} />
 
         {/* landing pages  */}
-
         <Route path="sign-up-biz-types" element={<BuisnessType />} />
         <Route path="sign-up-big-biz" element={<SignUpBigBiz />} />
         <Route path="sign-up-small-biz" element={<PersonalBiz />} />
         <Route path="sign-up-govt-inst" element={<PersonalBiz />} />
         <Route path="contact-us" element={<ContactUs />} />
-
         <Route path="sign-up-referral" element={<SignUpReferral />} />
       </Routes>
     </BrowserRouter>

@@ -4,6 +4,7 @@ import { ManageAttendance, ManageStore } from "../../components/Home_";
 import { useUser } from "../../hooks";
 import { Link } from "react-router-dom";
 import { LandingHeader } from "../../components/Landing";
+import styles from "./Index.module.css";
 export const ContactUs = () => {
   return (
     <main
@@ -30,7 +31,7 @@ export const ContactUs = () => {
           >
             Contact us
           </h1>
-          <div className="flex flex-col align-center">
+          <div className={`${styles.container} flex flex-col align-center`}>
             <p style={{ maxWidth: 350, textAlign: "center" }}>
               Have a concern, please do send us a message we are always
               available to help out
@@ -57,10 +58,11 @@ export const ContactUs = () => {
         className="flex-col align-center pb-[90px]"
       >
         <h2
+          className={styles.headings}
           style={{
             color: "#19201D",
             textAlign: "center",
-            fontSize: 48,
+
             padding: "0 10vw",
 
             fontWeight: "700"
@@ -69,10 +71,11 @@ export const ContactUs = () => {
           Sign up with Gotru hub
         </h2>
         <h2
+          className={styles.headings}
           style={{
             color: "#19201D",
             textAlign: "center",
-            fontSize: 48,
+
             padding: "0 10vw",
 
             fontWeight: "700"
@@ -81,7 +84,14 @@ export const ContactUs = () => {
           to start managing your team
         </h2>
         <div className="center" style={{ marginTop: 24, marginBottom: 32 }}>
-          <p style={{ textAlign: "center", maxWidth: 580, lineHeight: 1.6 }}>
+          <p
+            style={{
+              textAlign: "center",
+              maxWidth: 580,
+              lineHeight: 1.6,
+              padding: "0 20px"
+            }}
+          >
             Create account instantly to start managing your team and resources
           </p>
         </div>
@@ -109,13 +119,14 @@ export const ContactUs = () => {
             {[{ title: "Terms of service" }, { title: "Privacy policy" }].map(
               (page, idx) => (
                 <li
+                  key={idx}
                   style={{
                     padding: "0 24px",
                     borderRight:
                       idx == 0 ? "1px solid #444A47" : "1px solid transparent"
                   }}
                 >
-                  <Link to="#" style={{ color: "white" }}>
+                  <Link to="#" style={{ color: "white", whiteSpace: "nowrap" }}>
                     {page.title}
                   </Link>
                 </li>

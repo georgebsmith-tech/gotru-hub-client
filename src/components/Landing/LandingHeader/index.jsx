@@ -16,9 +16,12 @@ export const LandingHeader = () => {
       </Link>
       {/* harmburger menu
        */}
-      <Stack className="flex flex-col" spacing={"6px"} className="pointer">
+      <Stack flex-col spacing={"6px"} className="pointer">
         {[1, 2, 3].map((item, idx) => (
-          <Box sx={{ height: "2px", backgroundColor: "#fff", width: "25px" }} />
+          <Box
+            key={idx}
+            sx={{ height: "2px", backgroundColor: "#fff", width: "25px" }}
+          />
         ))}
       </Stack>
       <div className={styles.mobileHide}>

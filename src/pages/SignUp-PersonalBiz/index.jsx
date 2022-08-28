@@ -14,7 +14,7 @@ export const PersonalBiz = () => {
       }}
     >
       <LandingHeader />
-      <div className="center">
+      <div className="center" style={{ padding: "0 8vw" }}>
         <div style={{ maxWidth: 664, width: "100%", paddingBottom: 90 }}>
           <h1
             style={{

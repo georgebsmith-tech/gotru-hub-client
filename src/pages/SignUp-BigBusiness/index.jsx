@@ -38,7 +38,7 @@ export const SignUpBigBiz = () => {
       }}
     >
       <LandingHeader />
-      <div className="center">
+      <div className="center" style={{ padding: "0 8vw" }}>
         <div style={{ maxWidth: 664, width: "100%", paddingBottom: 90 }}>
           <h1
             style={{
@@ -125,7 +125,7 @@ export const SignUpBigBiz = () => {
               />
             </FlexRow>
 
-            <ul className="flex" style={{ columnGap: "2vw" }}>
+            <FlexRow className="flex" style={{ columnGap: "2vw" }}>
               {[
                 {
                   title: "Certificate of Incorporation with CAC Number",
@@ -140,7 +140,7 @@ export const SignUpBigBiz = () => {
                   delete: () => setOpLicenceImage(null)
                 }
               ].map((type, idx) => (
-                <li
+                <div
                   key={idx}
                   onClick={() => {
                     if (!docs[idx]) type.action();
@@ -184,9 +184,9 @@ export const SignUpBigBiz = () => {
                       </div>
                     )}
                   </div>
-                </li>
+                </div>
               ))}
-            </ul>
+            </FlexRow>
             {/* refs */}
             <input
               accept=".pdf"

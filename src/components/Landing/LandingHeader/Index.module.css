@@ -6,6 +6,9 @@
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 32px;
 }
+.desktopHide {
+  display: none;
+}
 
 @media only screen and (max-width: 600px) {
   .headings {
@@ -13,6 +16,9 @@
   }
   .mobileHide {
     display: none;
+  }
+  .desktopHide {
+    display: flex;
   }
 }
 

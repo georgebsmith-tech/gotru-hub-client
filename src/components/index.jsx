@@ -65,3 +65,4 @@ export * from "./RulesAndPermission";
 
 //helpers
 export * from "./Helpers/FlexRow";
+export * from "./Helpers/Loader";

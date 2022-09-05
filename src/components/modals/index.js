@@ -6,3 +6,4 @@ export * from "./ProcessingModal";
 export * from "./SuccessModal";
 
 export * from "./SuspensionModal";
+export * from "./RegistrationStatusModal";

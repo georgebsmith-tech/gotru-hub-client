@@ -50,9 +50,14 @@ export const ContactUs = () => {
               className="flex"
             >
               <img src="/images/email.svg" />
-              <p style={{ marginLeft: 9.5 }}>
-                e-mail : acandacresources@gmail. com
-              </p>
+              <p style={{ marginLeft: 9.5 }}>gotruhub@gmail.com</p>
+            </div>
+            <div
+              style={{ maxWidth: 350, textAlign: "center", marginTop: 16 }}
+              className="flex"
+            >
+              <img src="/images/email.svg" />
+              <p style={{ marginLeft: 9.5 }}>acandacresources@gmail.com</p>
             </div>
           </div>
         </div>

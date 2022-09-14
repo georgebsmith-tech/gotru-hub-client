@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { Button, FlexRow, Input, Select } from "../../components";
 import { ManageAttendance, ManageStore } from "../../components/Home_";
-import { useHttpServices, useUser } from "../../hooks";
+import { useHttpServices, useStates, useUser } from "../../hooks";
 import { Link } from "react-router-dom";
 import { LandingHeader } from "../../components/Landing";
-import { Alert, Box, Snackbar } from "@mui/material";
+import { Alert, Box, Snackbar, Typography } from "@mui/material";
+import { RegistrationStatusModal } from "../../components/modals";
+
 export const SignUpGovtInst = () => {
   const [level, setLevel] = useState("");
   const [ministry, setMinistry] = useState("");
@@ -25,11 +27,18 @@ export const SignUpGovtInst = () => {
     address,
     website,
     ministry,
-    organizationType: "govt"
+    organizationType: "government"
   };
   const { postData, isLoading } = useHttpServices();
 
   const register = async () => {
+    handleClose();
+    if (level === "state" || level === "local government") {
+      body.state = state;
+    }
+    if (level === "local government") {
+      body.LGA = LGA;
+    }
     const data = await postData("/organizations/registeration/govt", body);
     console.log(data);
     if (data.error) {
@@ -47,6 +56,7 @@ export const SignUpGovtInst = () => {
 
     setErrorMessage("");
   };
+  const theStates = useStates();
 
   return (
     <main
@@ -57,12 +67,16 @@ export const SignUpGovtInst = () => {
       }}
     >
       <LandingHeader />
+      <RegistrationStatusModal
+        isOpen={isSuccessful}
+        closeModal={(e) => setIsSuccessful(false)}
+      />
       <Snackbar open={!(errorMessage == "")}>
         <Alert onClose={handleClose} severity="error" sx={{ width: "100%" }}>
           {errorMessage}
         </Alert>
       </Snackbar>
-      <Box className="center " sx={{ p: "0px 8vw" }}>
+      <Box className="center " sx={{ p: "0px 8vw", position: "relative" }}>
         <Box style={{ maxWidth: 664, width: "100%", paddingBottom: 90 }}>
           <h1
             style={{
@@ -78,6 +92,14 @@ export const SignUpGovtInst = () => {
           >
             Government Institutions
           </h1>
+          <Box sx={{ position: "absolute", top: 10 }}>
+            <Link to="/sign-up-biz-types" className="flex align-center">
+              <img src="/images/back1.svg" alt="back img" />
+              <Typography sx={{ fontSize: "12px", color: "#19201D", ml: 1 }}>
+                Back
+              </Typography>
+            </Link>
+          </Box>
           <Box>
             <FlexRow>
               <Select
@@ -115,12 +137,17 @@ export const SignUpGovtInst = () => {
                 <Select
                   containerStyle={{ flex: 1 }}
                   title="State"
+                  placeholder="Chose a state"
                   style={{
                     backgroundColor: "transparent",
                     border: "1px solid #D5D7E4"
                   }}
                   labelStyle={{ fontSize: 12, color: "#19201D" }}
                   value={state}
+                  options={theStates.states.map((state) => ({
+                    value: state.state_name,
+                    label: state.state_name
+                  }))}
                   onChange={(e) => setState(e.target.value)}
                 />
               )}

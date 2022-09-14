@@ -4,6 +4,7 @@ import { ManageAttendance, ManageStore } from "../../components/Home_";
 import { useUser } from "../../hooks";
 import { Link } from "react-router-dom";
 import { LandingHeader } from "../../components/Landing";
+import { Box, Typography } from "@mui/material";
 export const SignUpBigBiz = () => {
   const [cacImage, setCacImage] = useState(null);
   const [opLicenceImage, setOpLicenceImage] = useState(null);
@@ -38,7 +39,10 @@ export const SignUpBigBiz = () => {
       }}
     >
       <LandingHeader />
-      <div className="center" style={{ padding: "0 8vw" }}>
+      <div
+        className="center"
+        style={{ padding: "0 8vw", position: "relative" }}
+      >
         <div style={{ maxWidth: 664, width: "100%", paddingBottom: 90 }}>
           <h1
             style={{
@@ -54,6 +58,14 @@ export const SignUpBigBiz = () => {
           >
             Register Organization
           </h1>
+          <Box sx={{ position: "absolute", top: 10 }}>
+            <Link to="/sign-up-biz-types" className="flex align-center">
+              <img src="/images/back1.svg" alt="back img" />
+              <Typography sx={{ fontSize: "12px", color: "#19201D", ml: 1 }}>
+                Back
+              </Typography>
+            </Link>
+          </Box>
           <div>
             <FlexRow>
               <Input

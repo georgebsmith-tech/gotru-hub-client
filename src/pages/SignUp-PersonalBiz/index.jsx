@@ -3,7 +3,9 @@ import { Button, FlexRow, Input, Loader } from "../../components";
 import { useHttpServices } from "../../hooks";
 import { LandingHeader } from "../../components/Landing";
 import { RegistrationStatusModal } from "../../components/modals";
-import { Alert, Snackbar } from "@mui/material";
+import { Alert, Snackbar, Typography } from "@mui/material";
+import { Box } from "@mui/system";
+import { Link } from "react-router-dom";
 
 export const PersonalBiz = () => {
   const [isSuccessful, setIsSuccessful] = useState(false);
@@ -68,7 +70,10 @@ export const PersonalBiz = () => {
         </Alert>
       </Snackbar>
       <LandingHeader />
-      <div className="center" style={{ padding: "0 8vw" }}>
+      <div
+        className="center"
+        style={{ padding: "0 8vw", position: "relative" }}
+      >
         <div style={{ maxWidth: 664, width: "100%", paddingBottom: 90 }}>
           <h1
             style={{
@@ -84,6 +89,14 @@ export const PersonalBiz = () => {
           >
             Personal Businesses
           </h1>
+          <Box sx={{ position: "absolute", top: 10 }}>
+            <Link to="/sign-up-biz-types" className="flex align-center">
+              <img src="/images/back1.svg" alt="back img" />
+              <Typography sx={{ fontSize: "12px", color: "#19201D", ml: 1 }}>
+                Back
+              </Typography>
+            </Link>
+          </Box>
           <div>
             <FlexRow>
               <Input

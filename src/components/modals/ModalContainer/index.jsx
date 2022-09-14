@@ -19,6 +19,7 @@ export const ModalContainer = ({
         display: isOpen ? "grid" : "none",
         placeItems: "center",
         padding: "0 6vw",
+        zIndex: 10,
 
         ...containerStyle
       }}

@@ -154,12 +154,11 @@ export const Home = () => {
             style={{
               color: "#fff",
 
-              maxWidth: 800,
+              maxWidth: 600,
               textAlign: "center"
             }}
           >
-            Why cooperate organizations and parents choose Gotruhub for their
-            staff members and minors
+            Why Cooperate Organizations choose Gotruhub
           </h2>
         </div>
         <Box>

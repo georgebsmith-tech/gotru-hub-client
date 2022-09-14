@@ -14,7 +14,7 @@ export const Home = () => {
   const services = [
     {
       img: "security",
-      title: "Encrytpted information",
+      title: "Encrypted information",
       text: `We provide you with a secure space to share and manage all your information`
     },
     {

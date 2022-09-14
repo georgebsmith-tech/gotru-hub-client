@@ -55,7 +55,7 @@ export const LandingHeader = () => {
       >
         {[
           { title: "Home", link: "/" },
-          { title: "Contac Us", link: "/contact-us" },
+          { title: "Contact Us", link: "/contact-us" },
           { title: "Login", link: "/sign-in" },
           { title: "Sign Up", link: "/sign-up-biz-types" }
         ].map((page, idx) => (

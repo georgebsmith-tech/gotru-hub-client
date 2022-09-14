@@ -158,7 +158,7 @@ export const Home = () => {
               textAlign: "center"
             }}
           >
-            Why Cooperate Organizations choose Gotruhub
+            Why Corporate Organizations choose Gotruhub
           </h2>
         </div>
         <Box>

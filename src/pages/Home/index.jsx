@@ -5,6 +5,7 @@ import { useUser } from "../../hooks";
 import { Link } from "react-router-dom";
 import { LandingHeader } from "../../components/Landing";
 import styles from "./Index.module.css";
+import { Box } from "@mui/material";
 export const Home = () => {
   const [manageTab, setManageTab] = useState(0);
   const user = useUser();
@@ -14,12 +15,12 @@ export const Home = () => {
     {
       img: "security",
       title: "Encrytpted information",
-      text: `We provide you with a secure space to share and manage all your informations`
+      text: `We provide you with a secure space to share and manage all your information`
     },
     {
       img: "affordable",
       title: "Affordable pricing",
-      text: `Our pricing is basically unbeatable consering the features we’re providing`
+      text: `Affordable offers  Our charges are unbeatable considering the services we provide  / Management of large data`
     },
     {
       img: "data",
@@ -54,17 +55,24 @@ export const Home = () => {
       >
         Manage your mega stores, employees and team members, all in one app
       </h1>
-      <div
+      <Box
         className={`center ${styles.container}`}
-        style={{ marginTop: 24, marginBottom: 32 }}
+        sx={{ marginTop: 6, marginBottom: 8 }}
       >
-        <p style={{ textAlign: "center", maxWidth: 650, lineHeight: 1.6 }}>
-          Go tru hub allow you manage your mega store, your team as well as your
-          employees, we provide you with tools that help you generate revenue
-          seamlessly
+        <p style={{ textAlign: "center", maxWidth: 850, lineHeight: 1.6 }}>
+          Gotruhub is a multi-tenant digital platform that allows you manage
+          your mega stores, mange staff members, help schools assume proper
+          accountability of students movements and attendance. It also allows
+          you take records of the security of your minor's in school and help in
+          revenue collection. Gotruhub make sales at shops and access to
+          payments easy. It alerts you on the arrival and departure of your
+          minors at schools, ensures schools take responsibility of students
+          times in schools and keep track of staff promptness to duty. It also
+          helps the government keep detailed track of revenue sources, it
+          further helps in collecting revenue from the sources.
         </p>
-      </div>
-      <div className="center">
+      </Box>
+      <Box className="center">
         <ButtonLink
           link="/sign-up-biz-types"
           style={{
@@ -73,9 +81,9 @@ export const Home = () => {
             padding: "16px 35px",
             fontSize: 16
           }}
-          title="Get Started with Gotru hub"
+          title="Get Started with Gotruhub"
         />
-      </div>
+      </Box>
       <div className="center" style={{ marginTop: 80, padding: "0 12vw" }}>
         <img
           src="/images/land-1.svg"
@@ -150,40 +158,42 @@ export const Home = () => {
               textAlign: "center"
             }}
           >
-            Why Organizations choose Gotru hub for their staffs
+            Why Cooperate Organizations choose Gotruhub
           </h2>
         </div>
-        <ul style={{ columnGap: 32 }} className={styles.services}>
-          {services.map((item, idx) => (
-            <li key={idx}>
-              <div className="flex-col align-center ">
-                <div className="center" style={{ width: 60, height: 60 }}>
-                  <img
-                    alt="an image"
-                    src={`/images/${item.img}.svg`}
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover"
-                    }}
-                  />
+        <Box>
+          <ul style={{ columnGap: 32 }} className={styles.services}>
+            {services.map((item, idx) => (
+              <li key={idx}>
+                <div className="flex-col align-center ">
+                  <div className="center" style={{ width: 60, height: 60 }}>
+                    <img
+                      alt="an image"
+                      src={`/images/${item.img}.svg`}
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover"
+                      }}
+                    />
+                  </div>
+                  <p
+                    style={{ color: "#fff", marginBottom: 16, marginTop: 32 }}
+                    className="f24"
+                  >
+                    {item.title}
+                  </p>
+                  <p
+                    style={{ color: "#DADFDD", textAlign: "center" }}
+                    className="f16"
+                  >
+                    {item.text}
+                  </p>
                 </div>
-                <p
-                  style={{ color: "#fff", marginBottom: 16, marginTop: 32 }}
-                  className="f24"
-                >
-                  {item.title}
-                </p>
-                <p
-                  style={{ color: "#DADFDD", textAlign: "center" }}
-                  className="f16"
-                >
-                  {item.text}
-                </p>
-              </div>
-            </li>
-          ))}
-        </ul>
+              </li>
+            ))}
+          </ul>
+        </Box>
       </div>
       <div
         style={{ marginTop: 200, marginBottom: 80 }}
@@ -201,7 +211,7 @@ export const Home = () => {
             maxWidth: 1100
           }}
         >
-          Sign up with Gotru hub to start managing your team
+          Sign up with Gotruhub to start managing your team
         </h2>
         <div
           className={`center ${styles.container}`}
@@ -219,7 +229,7 @@ export const Home = () => {
               backgroundColor: "#19201D",
               color: "#fff"
             }}
-            title="Get Started with Gotru hub"
+            title="Get Started with Gotruhub"
           />
         </div>
       </div>

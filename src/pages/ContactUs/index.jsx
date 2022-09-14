@@ -5,10 +5,12 @@ import { useUser } from "../../hooks";
 import { Link } from "react-router-dom";
 import { LandingHeader } from "../../components/Landing";
 import styles from "./Index.module.css";
+import { Box } from "@mui/material";
 export const ContactUs = () => {
   return (
-    <main
-      style={{
+    <Box
+      component="main"
+      sx={{
         backgroundColor: "#fff",
         width: "100vw",
         minHeight: "100vh"
@@ -41,14 +43,16 @@ export const ContactUs = () => {
               className="flex"
             >
               <img src="/images/phone.svg" />
-              <p style={{ marginLeft: 9.5 }}>090999999999</p>
+              <p style={{ marginLeft: 9.5 }}>090 20060037</p>
             </div>
             <div
               style={{ maxWidth: 350, textAlign: "center", marginTop: 16 }}
               className="flex"
             >
               <img src="/images/email.svg" />
-              <p style={{ marginLeft: 9.5 }}>help@gotru.com</p>
+              <p style={{ marginLeft: 9.5 }}>
+                e-mail : acandacresources@gmail. com
+              </p>
             </div>
           </div>
         </div>
@@ -68,7 +72,7 @@ export const ContactUs = () => {
             fontWeight: "700"
           }}
         >
-          Sign up with Gotru hub
+          Sign up with Gotruhub
         </h2>
         <h2
           className={styles.headings}
@@ -103,18 +107,19 @@ export const ContactUs = () => {
               backgroundColor: "#19201D",
               color: "#fff"
             }}
-            title="Get Started with Gotru hub"
+            title="Get Started with Gotruhub"
           />
         </div>
       </div>
-      <footer
-        style={{ padding: 60, backgroundColor: "#19201D" }}
+      <Box
+        component="footer"
+        sx={{ padding: "60px", backgroundColor: "#19201D" }}
         className="flex flex-col align-center"
       >
-        <div>
+        <Box>
           <img src="/images/logo-white.svg" />
-        </div>
-        <div style={{ marginTop: 50 }}>
+        </Box>
+        <Box sx={{ marginTop: "50px" }}>
           <ul className="flex">
             {[{ title: "Terms of service" }, { title: "Privacy policy" }].map(
               (page, idx) => (
@@ -133,8 +138,8 @@ export const ContactUs = () => {
               )
             )}
           </ul>
-        </div>
-      </footer>
-    </main>
+        </Box>
+      </Box>
+    </Box>
   );
 };

@@ -14,7 +14,7 @@ export const BuisnessType = () => {
     {
       img: "security",
       title: "Encrytpted information",
-      text: `We provide you with a secure space to share and manage all your informations`
+      text: `We provide you with a secure space to share and manage all your information`
     },
     {
       img: "affordable",

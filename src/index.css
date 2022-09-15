@@ -1328,7 +1328,6 @@ input[type="time"]::webkit-calendar-picker-indicator:focus
 }
 
 .allMG > p {
-
   font-style: normal;
   font-weight: 450;
   font-size: 12px;
@@ -2587,4 +2586,14 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   display: flex;
   padding-left: 11px;
   align-items: center;
+}
+
+.desktopOnly {
+  display: block;
+}
+
+@media only screen and (max-width: 500px) {
+  .desktopOnly {
+    display: none;
+  }
 }

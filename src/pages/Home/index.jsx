@@ -19,13 +19,13 @@ export const Home = () => {
     },
     {
       img: "affordable",
-      title: "Affordable pricing",
-      text: `Affordable offers  Our charges are unbeatable considering the services we provide  / Management of large data`
+      title: "Affordable offer",
+      text: `Our charges are unbeatable considering the services we provide  / Management of large data`
     },
     {
       img: "data",
-      title: "Management of big data",
-      text: `Even with the ulk of information you enter, we provide you with ease of managemrnt`
+      title: "Effective management of large data",
+      text: `Not minding the size of information you enter, we provide stress free handling`
     },
     {
       img: "support-service",
@@ -53,23 +53,26 @@ export const Home = () => {
           fontWeight: "700"
         }}
       >
-        Manage your mega stores, employees and team members, all in one app
+        Manage your mega stores, employees, team members and collect revenue
+        with just one app
       </h1>
       <Box
         className={`center ${styles.container}`}
         sx={{ marginTop: 6, marginBottom: 8 }}
       >
         <p style={{ textAlign: "center", maxWidth: 850, lineHeight: 1.6 }}>
-          Gotruhub is a multi-tenant digital platform that allows you manage
-          your mega stores, mange staff members, help schools assume proper
-          accountability of students movements and attendance. It also allows
-          you take records of the security of your minor's in school and help in
-          revenue collection. Gotruhub make sales at shops and access to
-          payments easy. It alerts you on the arrival and departure of your
-          minors at schools, ensures schools take responsibility of students
-          times in schools and keep track of staff promptness to duty. It also
-          helps the government keep detailed track of revenue sources, it
-          further helps in collecting revenue from the sources.
+          Gotruhub is a multi tenant digital platform built for diverse
+          functions which include cooperative trading. It enable you manage your
+          mega stores, manage members of staff, help schools/parents keep track
+          of students security and school attendance record. It as well make
+          schools accountable for students in their custody and also provide you
+          with tools that can help you in revenue collection and accountability.
+          Gotruhub make sales and access to payments easy. It alerts you on the
+          arrival and departure of your minors at schools, ensures that schools
+          take responsibility of students times in their care. It keeps track of
+          staff promptness to duty and as well helps the Government/ corporate
+          organizations keep detailed track of revenue sources and further helps
+          in collecting and keeping records of revenue from such sources.
         </p>
       </Box>
       <Box className="center">

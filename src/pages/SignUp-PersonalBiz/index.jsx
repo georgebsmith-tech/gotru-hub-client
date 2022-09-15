@@ -6,6 +6,7 @@ import { RegistrationStatusModal } from "../../components/modals";
 import { Alert, Snackbar, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import { Link } from "react-router-dom";
+import { RegistrationTitle } from "../../components/Home_";
 
 export const PersonalBiz = () => {
   const [isSuccessful, setIsSuccessful] = useState(false);
@@ -75,28 +76,8 @@ export const PersonalBiz = () => {
         style={{ padding: "0 8vw", position: "relative" }}
       >
         <div style={{ maxWidth: 664, width: "100%", paddingBottom: 90 }}>
-          <h1
-            style={{
-              color: "#19201D",
+          <RegistrationTitle title="Personal Businesses" />
 
-              fontSize: 24,
-
-              fontWeight: "700",
-
-              marginBottom: 40,
-              textAlign: "center"
-            }}
-          >
-            Personal Businesses
-          </h1>
-          <Box sx={{ position: "absolute", top: 10 }}>
-            <Link to="/sign-up-biz-types" className="flex align-center">
-              <img src="/images/back1.svg" alt="back img" />
-              <Typography sx={{ fontSize: "12px", color: "#19201D", ml: 1 }}>
-                Back
-              </Typography>
-            </Link>
-          </Box>
           <div>
             <FlexRow>
               <Input

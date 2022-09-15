@@ -1,13 +1,25 @@
 import React, { useRef, useState } from "react";
 import { Button, FlexRow, Input } from "../../components";
-import { ManageAttendance, ManageStore } from "../../components/Home_";
-import { useUser } from "../../hooks";
-import { Link } from "react-router-dom";
+import {
+  ManageAttendance,
+  ManageStore,
+  RegistrationTitle
+} from "../../components/Home_";
+
 import { LandingHeader } from "../../components/Landing";
 import { Box, Typography } from "@mui/material";
 export const SignUpBigBiz = () => {
   const [cacImage, setCacImage] = useState(null);
   const [opLicenceImage, setOpLicenceImage] = useState(null);
+  const [isSuccessful, setIsSuccessful] = useState(false);
+  const [name, setName] = useState("");
+  const [businessType, setBusinessType] = useState("");
+  const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
+  const [yearOfEstablishment, setYearOfEstablishment] = useState("");
+  const [nameOfProprietor, setNameOfProprietor] = useState("");
+  const [businessAddress, setBusinessAddress] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const docs = [cacImage, opLicenceImage];
 
@@ -44,28 +56,7 @@ export const SignUpBigBiz = () => {
         style={{ padding: "0 8vw", position: "relative" }}
       >
         <div style={{ maxWidth: 664, width: "100%", paddingBottom: 90 }}>
-          <h1
-            style={{
-              color: "#19201D",
-
-              fontSize: 24,
-
-              fontWeight: "700",
-
-              marginBottom: 40,
-              textAlign: "center"
-            }}
-          >
-            Register Organization
-          </h1>
-          <Box sx={{ position: "absolute", top: 10 }}>
-            <Link to="/sign-up-biz-types" className="flex align-center">
-              <img src="/images/back1.svg" alt="back img" />
-              <Typography sx={{ fontSize: "12px", color: "#19201D", ml: 1 }}>
-                Back
-              </Typography>
-            </Link>
-          </Box>
+          <RegistrationTitle />
           <div>
             <FlexRow>
               <Input

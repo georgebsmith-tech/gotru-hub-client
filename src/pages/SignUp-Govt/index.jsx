@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { Button, FlexRow, Input, Select } from "../../components";
-import { ManageAttendance, ManageStore } from "../../components/Home_";
+import {
+  ManageAttendance,
+  ManageStore,
+  RegistrationTitle
+} from "../../components/Home_";
 import { useHttpServices, useStates, useUser } from "../../hooks";
 import { Link } from "react-router-dom";
 import { LandingHeader } from "../../components/Landing";
@@ -78,28 +82,7 @@ export const SignUpGovtInst = () => {
       </Snackbar>
       <Box className="center " sx={{ p: "0px 8vw", position: "relative" }}>
         <Box style={{ maxWidth: 664, width: "100%", paddingBottom: 90 }}>
-          <h1
-            style={{
-              color: "#19201D",
-
-              fontSize: 24,
-
-              fontWeight: "700",
-
-              marginBottom: 40,
-              textAlign: "center"
-            }}
-          >
-            Government Institutions
-          </h1>
-          <Box sx={{ position: "absolute", top: 10 }}>
-            <Link to="/sign-up-biz-types" className="flex align-center">
-              <img src="/images/back1.svg" alt="back img" />
-              <Typography sx={{ fontSize: "12px", color: "#19201D", ml: 1 }}>
-                Back
-              </Typography>
-            </Link>
-          </Box>
+          <RegistrationTitle title="Government Institutions" />
           <Box>
             <FlexRow>
               <Select

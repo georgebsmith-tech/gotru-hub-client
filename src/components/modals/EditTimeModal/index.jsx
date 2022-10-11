@@ -14,7 +14,7 @@ export const EditTimeModal = ({ closeModal, isOpen }) => (
     onClick={() => closeModal(false)}
   >
     <div
-      style={{ width: 999, height: 604 }}
+      style={{ width: 1099, height: 604 }}
       className="bg-white z "
       onClick={(e) => {
         e.stopPropagation();
@@ -30,7 +30,7 @@ export const EditTimeModal = ({ closeModal, isOpen }) => (
       </div>
 
       <section className="twotime">
-        <div className="atimes">
+        <div className="atimes" style={{width:"50%"}}>
           <h3>Manage Time</h3>
           <p>
             Are you sure you want to edit this time? Editing this time means the
@@ -38,7 +38,7 @@ export const EditTimeModal = ({ closeModal, isOpen }) => (
             affect when they get to work.
           </p>
         </div>
-        <div>
+        <div style={{width:"50%"}}>
           <div className="textas">
             <h6>Reason for time edit</h6>
             <textarea placeholder="Enter you reason for the time edit"></textarea>
@@ -47,7 +47,7 @@ export const EditTimeModal = ({ closeModal, isOpen }) => (
             <div>
               <h5>Time in</h5>
               <div className="clock">
-                <input type="text" placeholder="Select date" />
+                <input type="time" placeholder="Select date" />
                 <img src="./images/clock.svg" />
               </div>
             </div>

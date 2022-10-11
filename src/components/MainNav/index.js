@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+import { Link } from "react-router-dom";
 import { NavSection, RegisterUserModal } from "..";
 import { Context } from "../../contexts";
 
@@ -22,7 +23,7 @@ export const MainNav = ({ setNotificationIsOpen }) => {
           overflow: "auto",
         }}
       >
-        <div style={{ padding: "48px 32px", width: "fit-content" }}>
+        <div style={{ padding: "48px 32px 20px", width: "fit-content" }}>
           <div
             style={{ marginBottom: 48 }}
             className="justify-between flex align-center"
@@ -97,22 +98,91 @@ export const MainNav = ({ setNotificationIsOpen }) => {
           routes={[
             {
               page: "Messaging",
-              img: "dashboard-active.svg",
+              img: "message.svg",
               link: "/messaging",
             },
             {
               page: "Notifications",
-              img: "manage-users-active.svg",
+              img: "notification.svg",
               link: "/notifications",
               action: () => setNotificationIsOpen(true),
             },
             {
               page: "Settings",
-              img: "manage-users-active.svg",
+              img: "setting.svg",
               link: "/settings",
             },
           ]}
         />
+        <section
+          style={{ marginTop: 35 }}
+          className="flex-col align-center">
+          <div style={{border: "1px solid rgb(68, 74, 71)", width: "75%"}}></div>
+          <ul style={{ marginTop: 17.33 }}>
+              <li>
+                {!navIsCollapsed && (
+                <Link
+                  to="/profile"
+                  style={{
+                    padding: "10px 32px 10px",
+    
+                    marginBottom: 4,
+
+                    marginLeft: "0px",
+
+                  }}
+                  className="flex align-center hover"
+                >
+                  <img src="/images/avatar.svg" style={{ marginRight: 12, }} />
+                    <p
+                      className="fg-dark7 font-std"
+                      style={{ whiteSpace: "nowrap" }}
+                    >
+                      Brightmac<br/><span style={{color:"#6F7975", fontSize:"12px", fontWeight:450 }}>Admin</span>
+                    </p>
+                </Link>
+                    )}
+                {navIsCollapsed && (
+                <Link
+                  to="/profile"
+                  style={{
+                    padding: "0px",
+    
+                    marginBottom: 4,
+
+                    marginLeft: "0px",
+
+                  }}
+                  className="align-center hover"
+                >
+                  <img src="/images/avatar.svg"/>
+                    <p
+                      className="fg-dark7 font-std"
+                      style={{ whiteSpace: "nowrap", textAlign: "center" }}
+                    >
+                      Brightmac<br/><span style={{color:"#6F7975", fontSize:"12px", fontWeight:450 }}>Admin</span>
+                    </p>
+                </Link>
+                    )}
+              </li>
+          </ul>
+          <div style={{border: "1px solid rgb(68, 74, 71)", width: "75%", marginTop:"10px"}}></div>
+        </section>
+        <NavSection
+         routes={[
+            {
+              page: "Logout",
+              img: "logout.svg",
+              link: "/logout",
+            },
+          ]}
+        />
+        {navIsCollapsed &&(
+          <p className="fg-dark7 std" style={{textAlign:"center"}}>
+            Log out
+          </p>
+        )}
+        <div style={{marginTop:"30px"}}></div>
       </nav>
     </>
   );

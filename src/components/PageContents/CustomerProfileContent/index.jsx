@@ -1,10 +1,12 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { Input, Select, Button, ProfileDetail } from "../..";
 import { GoBack } from "../../Helpers/GoBack";
-
-export const CustomerProfileContent = () => (
+export const CustomerProfileContent = () => {
+  const navigate = useNavigate();
+  return(
   <section>
-    <GoBack />
+    <GoBack/>
     <section style={{ width: "100%" }}>
       <div className="bg-white" style={{ padding: "40px 32px" }}>
         <div
@@ -24,7 +26,7 @@ export const CustomerProfileContent = () => (
             Emmanuel Joseph’s Profile
           </h1>
           <div className="flex" style={{ columnGap: 15 }}>
-            <Button title="Customer Records" />
+            <Button onClick={() => navigate('/customer-report')} title="Customer Records" />
             <Button
               classes="bg-primary1 fg-white resetPasswordButton"
               title="Resend Password"
@@ -62,7 +64,8 @@ export const CustomerProfileContent = () => (
       </div>
     </section>
   </section>
-);
+  );
+};
 
 const Li = ({ prty, value, idx }) => (
   <li

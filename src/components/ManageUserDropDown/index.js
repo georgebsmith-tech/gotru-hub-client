@@ -1,12 +1,11 @@
-import React from "react";
-
-export const ManageUserDropDown = ({ setConfigureTableIsOpen }) => {
+import React, { useState } from "react";
+export const ManageUserDropDown = ({ setConfigureTableIsOpen, setUserModalIsOpen}) => {
   return (
     <section className="editback">
       <div className="three-dots-drop-down">
         <div
           className="editsv hover"
-          onClick={() => setConfigureTableIsOpen(true)}
+          onClick={() => {setConfigureTableIsOpen(true); setUserModalIsOpen(false);}}
         >
           <img src="./images/edition.svg" />
           <h6>Configure Table</h6>
@@ -19,7 +18,10 @@ export const ManageUserDropDown = ({ setConfigureTableIsOpen }) => {
           <img src="./images/printrep.svg" />
           <h6>Import Sheet</h6>
         </div>
-        <div className="editsv hover">
+        <div 
+          className="editsv hover" 
+          onClick={() => {setUserModalIsOpen(true); setConfigureTableIsOpen(false);}}
+          >
           <img src="./images/printrep.svg" />
           <h6>Add member</h6>
         </div>

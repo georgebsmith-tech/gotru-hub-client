@@ -55,6 +55,7 @@ export const LandingHeader = () => {
       >
         {[
           { title: "Home", link: "/" },
+          { title: "About Us", link: "/about-us" },
           { title: "Contact Us", link: "/contact-us" },
           { title: "Login", link: "/sign-in" },
           { title: "Sign Up", link: "/sign-up-biz-types" }
@@ -73,7 +74,10 @@ export const LandingHeader = () => {
       </Stack>
 
       <div className={styles.mobileHide}>
-        <Link to="/contact-us" style={{ marginRight: "12vw", color: "#fff" }}>
+        <Link to="/about-us" style={{ marginRight: "5vw", color: "#fff" }}>
+          About us
+        </Link>
+        <Link to="/contact-us" style={{ marginRight: "5vw", color: "#fff" }}>
           Contact us
         </Link>
         <Link to="/sign-in" style={{ marginRight: "5vw", color: "#fff" }}>

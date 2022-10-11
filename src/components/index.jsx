@@ -45,6 +45,7 @@ export * from "./ProductListContent";
 export * from "./SalesRegister";
 export * from "./SalesFilter";
 export * from "./SalesRow";
+export * from "./UsersRow";
 export * from "./GeneralProduct";
 export * from "./CustomerReport";
 export * from "./ReportPage";

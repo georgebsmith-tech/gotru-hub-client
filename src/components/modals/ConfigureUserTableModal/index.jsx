@@ -34,17 +34,24 @@ export const ConfigureUserTableModal = ({ closeModal, isOpen }) => (
         <div style={{ padding: "0 32px", marginTop: 40 }}>
           <div
             style={{
+              display: "grid", marginBottom:37
+            }}
+          >
+            <input type="text" disabled="disabled" value="Report the service" className="repser"/>
+          </div>
+          <div
+            style={{
               columnGap: 32,
               display: "grid",
               gridTemplateColumns: "repeat(auto-fill,minmax(220px,1fr))",
             }}
           >
-            <InputWithVis placeholder="Null" value="Date created" />
-            <InputWithVis placeholder="Null" />
-            <InputWithVis placeholder="Null" />
-            <InputWithVis placeholder="Null" />
-            <InputWithVis placeholder="Null" />
-            <InputWithVis placeholder="Null" />
+            <InputWithVis placeholder="Null" value="Name of user" />
+            <InputWithVis placeholder="Null" value="Date joined" />
+            <InputWithVis placeholder="Null" value="Class/Department" />
+            <InputWithVis placeholder="Null" value="Level"/>
+            <InputWithVis placeholder="Null" value="Attendance"/>
+            <InputWithVis placeholder="Null" value="Total Spent"/>
             <InputWithVis placeholder="Null" />
             <InputWithVis placeholder="Null" />
             <InputWithVis placeholder="Null" />

@@ -1,6 +1,6 @@
 import React from "react";
 
-export const Arrival = ({ TimeIn, newTimeIn }) => {
+export const Departure = ({ TimeOut, newTimeOut }) => {
   return (
     <section className="updatedClock">
       <div className="updatedClockHolder">
@@ -8,13 +8,13 @@ export const Arrival = ({ TimeIn, newTimeIn }) => {
           <div>
             <img src="./images/caution.svg" />
           </div>
-          <div className="first-child">Clock In Time</div>
-          <div className="timer">{TimeIn}</div>
+          <div className="first-child">Clock Out Time</div>
+          <div className="timer">{TimeOut}</div>
         </div>
 
         <div className="timein">
-          <div className="first-child">Updated Clock In Time</div>
-          <div className="timer">{newTimeIn}</div>
+          <div className="first-child">Updated Clock Out Time</div>
+          <div className="timer">{newTimeOut}</div>
           <div>
             <img src="./images/chat.svg" />
           </div>

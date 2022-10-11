@@ -1,16 +1,20 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { Arrival } from "../../Arrival";
 import { TablerowContent } from "../..";
+import { Departure } from "../../Departure";
 
 export const AttendanceHistoryContent = () => {
+  const navigate = useNavigate();
+  
   return (
     <section>
-      <img src="./images/go.svg" />
+      <img onClick={() => navigate(-1)} style={{cursor:"pointer"}} src="./images/go.svg" />
       <section className="customer">
         <div className="bton">
           <h3>Emmanuel Joseph’s Timesheet</h3>
           <div className="ttons">
-            <button>Customer Records</button>
+            <button onClick={() => navigate('/customer-report')}>Customer Records</button>
             <button>Resend Password</button>
           </div>
         </div>
@@ -76,13 +80,20 @@ export const AttendanceHistoryContent = () => {
           </table>
 
           <div className="inout">
-            {[
-              { inTime: "", outTime: "" },
-              { inTime: "", outTime: "" },
-              { inTime: "", outTime: "" },
-            ].map((time, idx) => (
-              <Arrival inOut={time.inTime} outIn={time.outTime} />
-            ))}
+            <div>
+              {[
+                { oldTime: "09:30 am", NewTime: "10:00 am" },
+              ].map((time, idx) => (
+                <Arrival TimeIn={time.oldTime} newTimeIn={time.NewTime} />
+              ))}
+            </div>
+            <div>
+              {[
+                { oldTime: "--:--", NewTime: "10:00 pm" },
+              ].map((time, idx) => (
+                <Departure TimeOut={time.oldTime} newTimeOut={time.NewTime} />
+              ))}
+            </div>
           </div>
         </section>
       </section>

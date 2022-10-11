@@ -23,12 +23,12 @@ export const ProductListContent = () => {
           </section>
         )}
         {toggle == "productlist" ? (
-          <section className="productrow">
+          <section className={!isExpanded ? "productrow" : "productrow hide-x-overflow"} style={{paddingLeft:32, paddingRight:32}}>
             <section className="productholder">
               <div className="searchflexholds">
                 <div className="searchflex">
                   <h3>Product List</h3>
-                  <div className="searchItems">
+                  <div className={isExpanded ? "searchItems height-50":"searchItems"}>
                     <img src="./images/searchicon.svg" />
                     <input
                       type="search"
@@ -42,7 +42,7 @@ export const ProductListContent = () => {
                     <select>
                       <option>All</option>
                       <option>Buy</option>
-                      <option>salesLink</option>
+                      <option>Sales</option>
                     </select>
                   </div>
                 </div>
@@ -53,7 +53,7 @@ export const ProductListContent = () => {
             </section>
           </section>
         ) : (
-          <SalesFilter />
+          <SalesFilter isExpanded={isExpanded} />
         )}
       </section>
     </main>

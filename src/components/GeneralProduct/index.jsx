@@ -1,9 +1,9 @@
 import { React, useState } from "react";
 
-export const GeneralProduct = () => {
+export const GeneralProduct = ({isExpanded}) => {
   const [salesPerc, setSalesPerc] = useState(25);
   return (
-    <section className="general">
+    <section className={!isExpanded ? "general displayBlock" : "general"} style={{padding:"40px 32px"}}>
       <section className="generalProduct">
         <h3>General Product stocks</h3>
         <section className="filtercategory">
@@ -20,7 +20,7 @@ export const GeneralProduct = () => {
 
             <div className="salestype">
               <label>Manufacturer</label>
-              <input type="text" placeholder="Enter manaufacturer" />
+              <input type="text" placeholder="Enter manufacturer" />
             </div>
 
             <div className="salestype">

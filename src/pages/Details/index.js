@@ -57,7 +57,7 @@ export default function Details({}) {
       </section>
       <section className="formact">
         <div className="type" style={{ marginBottom: 30 }}>
-          <p>Email Address</p>
+          <p style={{color:"#fff",marginBottom:"5px"}}>Email Address</p>
           <input
             type="text"
             placeholder="hello@company.com"
@@ -68,7 +68,7 @@ export default function Details({}) {
           />
         </div>
         <div className="">
-          <p>Password</p>
+        <p style={{color:"#fff",marginBottom:"5px"}}>Password</p>
           <div style={{ position: "relative" }} className="type">
             <input
               type={encrypted ? "password" : "text"}
@@ -126,7 +126,7 @@ export default function Details({}) {
         </div> */}
         <div className="forgot">
           <p>
-            Forgot Password?
+            Forgot Password?&nbsp;
             <Link to="/reset-password" className="reset">
               Reset
             </Link>
@@ -138,14 +138,14 @@ export default function Details({}) {
         </button>
         <div className="new">
           <p>
-            New to Gotru?
-            <Link to="/sign-up" className="reset">
+            New to Gotru?&nbsp;
+            <Link to="/sign-up-biz-types" className="reset">
               Sign up
             </Link>
           </p>
         </div>
         <div className="copy">
-          <p>© 2022 Gotru. and Gotru logo are trademarks of the company.</p>
+          <p>© 2022 Gotruhub and Gotruhub logo are trademarks of the company.</p>
           <p className="white">
             Please visit our <span>Terms of service</span> for more details.
           </p>

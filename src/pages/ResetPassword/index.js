@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Details from "../Details";
+import Details from "../ResetDetails";
 
-export const Signin = () => {
+export const ResetPassword = () => {
   return (
     <main className="firstmain">
       <section className="secmain">

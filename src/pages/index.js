@@ -1,6 +1,8 @@
 export * from "./Dashboard";
 export * from "./Messaging";
 export * from "./Signin";
+export * from "./ResetPassword";
+export * from "./CreateNewPassword";
 export * from "./StocksInventory";
 export * from "./Attendance";
 export * from "./CustomerProfile";
@@ -24,4 +26,5 @@ export * from "./SignUp-BigBusiness";
 export * from "./SignUp-PersonalBiz";
 export * from "./SignUp-Referral";
 export * from "./SignUp-Govt";
+export * from "./AboutUs";
 export * from "./ContactUs";

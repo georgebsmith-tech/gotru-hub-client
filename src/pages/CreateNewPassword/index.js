@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Details from "../Details";
+import Details from "../ResetDetails/new-password.js";
 
-export const Signin = () => {
+export const CreateNewPassword = () => {
   return (
     <main className="firstmain">
       <section className="secmain">

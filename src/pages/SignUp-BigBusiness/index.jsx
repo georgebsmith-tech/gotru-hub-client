@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { Button, FlexRow, Input } from "../../components";
+import { Button, FlexRow, Input, Select } from "../../components";
 import {
   ManageAttendance,
   ManageStore,
@@ -14,6 +14,8 @@ export const SignUpBigBiz = () => {
   const [isSuccessful, setIsSuccessful] = useState(false);
   const [name, setName] = useState("");
   const [businessType, setBusinessType] = useState("");
+  const [registrationType, setRegistrationType] = useState("");
+  const [othersType, setOthersType] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [yearOfEstablishment, setYearOfEstablishment] = useState("");
@@ -77,6 +79,38 @@ export const SignUpBigBiz = () => {
                 }}
                 labelStyle={{ fontSize: 12, color: "#19201D" }}
               />
+              </FlexRow>
+              <FlexRow>
+              <Select
+                title="Registration Type"
+                placeholder="Select Registration Type"
+                containerStyle={{ flex: 1 }}
+                style={{
+                  backgroundColor: "transparent",
+                  border: "1px solid #D5D7E4"
+                }}
+                labelStyle={{ fontSize: 12, color: "#19201D" }}
+                options={[
+                  { label: "CAC", value: "CAC" },
+                  { label: "Others", value: "others" }
+                ]}
+                value={registrationType}
+                onChange={(e) => setRegistrationType(e.target.value)}
+              />
+              {(registrationType === "others") && (
+                <Input
+                  containerStyle={{ flex: 1 }}
+                  title="Others"
+                  placeholder="Please specify"
+                  style={{
+                    backgroundColor: "transparent",
+                    border: "1px solid #D5D7E4"
+                  }}
+                  labelStyle={{ fontSize: 12, color: "#19201D" }}
+                  value={othersType}
+                  onChange={(e) => setOthersType(e.target.value)}
+                />
+              )}
             </FlexRow>
             <FlexRow>
               <Input

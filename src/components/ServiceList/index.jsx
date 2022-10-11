@@ -7,7 +7,7 @@ export const ServiceList = () => {
     <section className="productholder">
       <div className="sellproduct">
         <div className="addservice">
-          <h3>Add New Product/Service</h3>
+          <h3 style={{marginTop:29, marginBottom:20}}>Add New Product/Service</h3>
         </div>
         <div className="greenproducts">
           <button

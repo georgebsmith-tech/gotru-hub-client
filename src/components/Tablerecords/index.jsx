@@ -23,7 +23,7 @@ export const Tablerecords = ({ day, timein, timeout, hours }) => {
           <p>16, Joseph street, Ikeja Lagos.</p>
         </div>
       </td>
-      <td className="greenbg">
+      <td className="greenBg">
         <div className="greenarr">
           <span>
             <img src="./images/arrowOut.svg" />

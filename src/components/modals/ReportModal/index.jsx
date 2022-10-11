@@ -53,7 +53,7 @@ export const ReportModal = ({ closeModal, isOpen }) => (
 
       <section className="Config">
         <div>
-          <button>Cancel</button>
+          <button onClick={() => closeModal(false)}>Cancel</button>
         </div>
       </section>
     </div>

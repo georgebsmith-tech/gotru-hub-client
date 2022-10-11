@@ -12,7 +12,7 @@ export const Productflex = ({ setExpanded, isExpanded, setToggle, toggle }) => {
             toggle === "productlist" ? "hovergreen pointer" : "pointer sales"
           }
         >
-          ProductList
+          Product List
         </div>
         <div
           onClick={() => setToggle("salesregister")}
@@ -23,17 +23,20 @@ export const Productflex = ({ setExpanded, isExpanded, setToggle, toggle }) => {
           Sales Register
         </div>
       </div>
-      <div>
+      <div style={{marginTop:"-22px"}}>
         {isExpanded ? (
-          <button
+          <button style={{
+            border: "1px solid #19201D",
+            borderRadius: "4px",
+          marginBottom:16,}}
             className="addProduct"
             onClick={() => setExpanded(!isExpanded)}
           >
             <div className="product">
               <div>
-                <img src="./images/plusSign.svg" />
+                <img style={{verticalAlign:"bottom"}} src="./images/plusSign.svg" />
               </div>
-              <p> Add new product</p>
+              <p style={{fontSize:17}}> Add New product</p>
             </div>
           </button>
         ) : (

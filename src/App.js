@@ -5,6 +5,8 @@ import React from "react";
 import {
   Dashbaord,
   Signin,
+  ResetPassword,
+  CreateNewPassword,
   AttendanceHistory,
   StocksInventory,
   Attendance,
@@ -21,6 +23,7 @@ import {
   BuisnessType,
   SignUpBigBiz,
   SignUpReferral,
+  AboutUs,
   ContactUs,
   SignUpGovtInst
 } from "./pages";
@@ -38,6 +41,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/sign-in" element={<Signin />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
+        <Route path="/new-password" element={<CreateNewPassword />} />
         <Route path="dashboard" element={<Dashbaord />} />
         <Route path="stocks-inventory" element={<StocksInventory />} />
         <Route path="attendance" element={<Attendance />} />
@@ -61,6 +66,7 @@ function App() {
         <Route path="sign-up-big-biz" element={<SignUpBigBiz />} />
         <Route path="sign-up-small-biz" element={<PersonalBiz />} />
         <Route path="sign-up-govt-inst" element={<SignUpGovtInst />} />
+        <Route path="about-us" element={<AboutUs />} />
         <Route path="contact-us" element={<ContactUs />} />
         <Route path="sign-up-referral" element={<SignUpReferral />} />
       </Routes>

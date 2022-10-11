@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Button, ButtonLink, FlexRow, Input } from "../../components";
-import { ManageAttendance, ManageStore } from "../../components/Home_";
 import { useUser } from "../../hooks";
 import { Link } from "react-router-dom";
 import { LandingHeader } from "../../components/Landing";

@@ -1,36 +1,64 @@
 import React, { useState } from "react";
 import { Button, ButtonLink } from "../../components";
-import { ManageAttendance, ManageStore } from "../../components/Home_";
+import { GotruTrade, GotruPass, GotruPay, GotruMonitor } from "../../components/Home_";
 import { useUser } from "../../hooks";
 import { Link } from "react-router-dom";
 import { LandingHeader } from "../../components/Landing";
 import styles from "./Index.module.css";
 import { Box } from "@mui/material";
 export const Home = () => {
-  const [manageTab, setManageTab] = useState(0);
+  const [manageTab, setManageTab] = useState("tab1");
   const user = useUser();
+  const TabNavItem = ({ idx, title, manageTab, setManageTab }) => {
+ 
+    const handleClick = () => {
+      setManageTab(idx);
+    };
+    
+   return (
+      <li onClick={handleClick} className={manageTab === idx ? "pointer" : ""} 
+      style={{
+        color: idx == manageTab ? "#19201D" : "#6F7975",
+        fontWeight: "500",
+        paddingBottom: 22,
+        borderBottom:
+          idx === manageTab ? "4px solid #19201D" : "4px solid #fff",
+          cursor: "pointer"
+      }}>
+        { title }
+      </li>
+    );
+   };
+  const TabContent = ({idx, manageTab, children}) => {
+    return (
+      manageTab === idx ? <div className="TabContent">
+        { children }
+      </div>
+      : null
+    );
+   };
 
   console.log(user);
   const services = [
     {
       img: "security",
       title: "Encrypted information",
-      text: `We provide you with a secure space to share and manage all your information`
+      text: `We provide you with a secure space to share and manage all your information.`
     },
     {
       img: "affordable",
-      title: "Affordable offer",
-      text: `Our charges are unbeatable considering the services we provide  / Management of large data`
+      title: "Affordable offers",
+      text: `Our charges are unbeatable considering the services we provide.`
     },
     {
       img: "data",
       title: "Effective management of large data",
-      text: `Not minding the size of information you enter, we provide stress free handling`
+      text: `Not minding the size of information you enter, we provide stress free handling.`
     },
     {
       img: "support-service",
       title: "Suport Team",
-      text: `Our support team are hands-on and we provide you with instant 24hrs support`
+      text: `Our support team are hands-on and we provide you with instant 24hrs support.`
     }
   ];
   return (
@@ -53,26 +81,14 @@ export const Home = () => {
           fontWeight: "700"
         }}
       >
-        Manage your mega stores, employees, team members and collect revenue
-        with just one app
+        Manage your mega stores, employees, team members and collect revenue with just one app
       </h1>
       <Box
         className={`center ${styles.container}`}
         sx={{ marginTop: 6, marginBottom: 8 }}
       >
-        <p style={{ textAlign: "center", maxWidth: 850, lineHeight: 1.6 }}>
-          Gotruhub is a multi tenant digital platform built for diverse
-          functions which include cooperative trading. It enable you manage your
-          mega stores, manage members of staff, help schools/parents keep track
-          of students security and school attendance record. It as well make
-          schools accountable for students in their custody and also provide you
-          with tools that can help you in revenue collection and accountability.
-          Gotruhub make sales and access to payments easy. It alerts you on the
-          arrival and departure of your minors at schools, ensures that schools
-          take responsibility of students times in their care. It keeps track of
-          staff promptness to duty and as well helps the Government/ corporate
-          organizations keep detailed track of revenue sources and further helps
-          in collecting and keeping records of revenue from such sources.
+        <p style={{ textAlign: "justify", maxWidth: 850, lineHeight: 1.6 }}>
+        Gotruhub is a multi tenant digital platform built for diverse functions which include cooperative trading. It also allow you manage your mega stores, manage staff members, help schools/parents keep track of students security and school attendance record. <Link to="/about-us" className="reset">Learn more</Link>
         </p>
       </Box>
       <Box className="center">
@@ -113,36 +129,33 @@ export const Home = () => {
           style={{ marginTop: 24, marginBottom: 32 }}
         >
           <p style={{ textAlign: "center", maxWidth: 580, lineHeight: 1.6 }}>
-            Our product is aimed at simplyifying the organization management
-            process and helping you keep track of team activities
+          Our product is aimed at simplifying  organization's management processes and helping to keep track of team activities.
           </p>
         </div>
       </div>
       {/* management tabs */}
       <div>
         <ul className="flex justify-center" style={{ columnGap: 25 }}>
-          {["Attendance management", "Store management"].map((tab, idx) => (
-            <li
-              onClick={() => setManageTab(idx)}
-              key={idx}
-              style={{
-                color: idx == manageTab ? "#19201D" : "#6F7975",
-                fontWeight: "500",
-                paddingBottom: 22,
-                borderBottom:
-                  idx === manageTab ? "4px solid #19201D" : "4px solid #fff"
-              }}
-              className="pointer"
-            >
-              {tab}
-            </li>
-          ))}
+        <TabNavItem title="Gotru Trade" idx="tab1" manageTab={manageTab} setManageTab={setManageTab}/>
+        <TabNavItem title="Gotru Pass" idx="tab2" manageTab={manageTab} setManageTab={setManageTab}/>
+        <TabNavItem title="Gotru Pay" idx="tab3" manageTab={manageTab} setManageTab={setManageTab}/>
+        <TabNavItem title="Gotru Monitor" idx="tab4" manageTab={manageTab} setManageTab={setManageTab}/>
         </ul>
-
-        {
-          manageTab === 0 ? <ManageAttendance /> : <ManageStore />
-          //  <ManageStore />
-        }
+        
+        <TabContent idx="tab1" manageTab={manageTab}>
+          <GotruTrade/>
+        </TabContent>
+        <TabContent idx="tab2" manageTab={manageTab}>
+          <GotruPass/>
+        </TabContent>
+        <TabContent idx="tab3" manageTab={manageTab}>
+          <GotruPay/>
+        </TabContent>
+        <TabContent idx="tab4" manageTab={manageTab}>
+          <GotruMonitor/>
+        </TabContent>
+        
+        
       </div>
       <div
         style={{
@@ -181,7 +194,7 @@ export const Home = () => {
                     />
                   </div>
                   <p
-                    style={{ color: "#fff", marginBottom: 16, marginTop: 32 }}
+                    style={{ color: "#fff", marginBottom: 16, marginTop: 32, textAlign:"center" }}
                     className="f24"
                   >
                     {item.title}

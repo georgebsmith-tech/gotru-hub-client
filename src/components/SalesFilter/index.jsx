@@ -11,8 +11,7 @@ import { Filter } from "../Filter";
 import { borderRadius } from "@mui/system";
 import { GeneralProduct } from "../GeneralProduct";
 
-export const SalesFilter = () => {
-  const [isExpanded, setExpanded] = React.useState(true);
+export const SalesFilter = ({isExpanded}) => {
   const [isSales, setIsSales] = useState(true);
 
   const [editIsOpen, setEditIsOpen] = useState(false);
@@ -23,15 +22,15 @@ export const SalesFilter = () => {
     setEditIsOpen(!editIsOpen);
   };
   return (
-    <main>
+    <main className={isExpanded ? "" : "hide-x-overflow"}>
       <SalesModal isOpen={salesModalIsOpen} />
       <FilterModal isOpen={filterModalIsOpen} />
-      <section className="vertical">
+      <section className="vertical" style={{padding:"0px 32px"}}>
         <section className="productholdSales">
           <div className="productholdSalesdiv">
             <h3>Register</h3>
 
-            <div className="searchItems">
+            <div className={!isExpanded ? "searchItems height-50":"searchItems"}>
               <img src="./images/searchicon.svg" />
               <input
                 type="search"
@@ -40,7 +39,7 @@ export const SalesFilter = () => {
                 }
               ></input>
             </div>
-            <section className="sectionfilter">
+            <section className={isExpanded ? "sectionfilter" : "hide"}>
               <div className="filterdate">
                 <label>Filter date:</label>
                 <div className="to-fro">
@@ -73,8 +72,7 @@ export const SalesFilter = () => {
 
         <TableNav />
       </section>
-
-      <GeneralProduct />
+      <GeneralProduct isExpanded={isExpanded} />
       {/* <section className="mode">jk/assm</section> */}
       <SalesModal isOpen={salesModalIsOpen} closeModal={setSalesModalIsOpen} />
       <FilterModal

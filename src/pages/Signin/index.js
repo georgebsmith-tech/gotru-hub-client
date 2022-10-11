@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Details from "../Details";
 
 export const Signin = () => {
@@ -7,7 +8,9 @@ export const Signin = () => {
       <section className="secmain">
         <div className="naviHold">
           <nav className="logoHold">
-            <img src="./images/logo-white.svg"></img>
+            <Link to="/">
+              <img src="./images/logo-white.svg"></img>
+            </Link>
           </nav>
         </div>
         <Details />

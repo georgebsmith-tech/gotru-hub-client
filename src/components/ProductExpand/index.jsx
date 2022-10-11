@@ -6,7 +6,7 @@ export const ProductExpand = () => {
     <section className="productflex">
       <div className="salesLink">
         <div className="sales">
-          <Link to="/">ProductList</Link>
+          <Link to="/">Product List</Link>
         </div>
         <div className="sales">
           <Link to="/">Sales Register</Link>

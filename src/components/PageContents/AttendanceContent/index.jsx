@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Sequence } from "../../FormElements/Sequence";
 import { EditTime, TableNav } from "../..";
 import { EditTimeModal } from "../..";
+import styles from "./attend.css";
 
 export const AttendanceContent = () => {
   const [editIsOpen, setEditIsOpen] = useState(false);
@@ -22,10 +23,10 @@ export const AttendanceContent = () => {
   return (
     <>
       <section className="regsec">
-        <div className="dotholder">
+        <div className="dotholder" style={{padding:"24px 32px"}}>
           <h3>Attendance Register</h3>
           <div className="threed">
-            <button>Print Report</button>
+            <button style={{paddingLeft:15,paddingRight:15}}>Print Report</button>
             <div>
               {editIsOpen && (
                 <EditTime changeModalState={setEdittimeModalIsOpen} />

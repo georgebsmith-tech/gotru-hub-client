@@ -60,17 +60,17 @@ export const BuisnessType = () => {
             <ul>
               {[
                 {
-                  title: "Registered Organizations",
+                  title: "Registered Organization",
                   text: "Companies with Registered CAC",
                   link: "/sign-up-big-biz"
                 },
                 {
-                  title: "Personal Businesses",
+                  title: "Personal Business",
                   text: "Businesses not registered",
                   link: "/sign-up-small-biz"
                 },
                 {
-                  title: "Government Institutions",
+                  title: "Government Institution",
                   text: "Government Agencies and Ministries",
                   link: "/sign-up-govt-inst"
                 }
@@ -101,7 +101,7 @@ export const BuisnessType = () => {
             </ul>
           </div>
           <div className="center" style={{ marginTop: 48, paddingBottom: 100 }}>
-            <p>Already have an account? Sign in</p>
+            <p>Already have an account? <Link to="/sign-in" className="reset">Sign in</Link></p>
           </div>
         </div>
       </div>

@@ -1,4 +1,5 @@
 import { React, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { ConfigureTable } from "../ConfigureTable";
 import { ConfigureTableReport } from "../ConfigureTableReport";
 import { Filter } from "../Filter";
@@ -7,6 +8,7 @@ import { ReportRow } from "../ReportRow";
 import { SalesModal } from "../modals";
 
 export const ReportPage = () => {
+  const navigate = useNavigate();
   const [editIsOpen, setEditIsOpen] = useState(false);
   const [salesModalIsOpen, setSalesModalIsOpen] = useState(false);
   const [filterModalIsOpen, setFilterModalIsOpen] = useState(false);
@@ -16,7 +18,7 @@ export const ReportPage = () => {
   };
   return (
     <main>
-      <img className="goback" src="./images/go.svg" />
+      <img className="goback" src="./images/go.svg"  onClick={() => navigate(-1)} />
       <SalesModal isOpen={salesModalIsOpen} />
       <section className="vertical">
         <section className="salesreport">
@@ -26,7 +28,7 @@ export const ReportPage = () => {
             <section className="sectionfilter">
               <div className="printbutts">
                 <button className="reportbutt">Print Report</button>
-                <div>
+                <div onClick={changeEditState}>
                   {editIsOpen && (
                     <ConfigureTableReport
                       changeModalState={setSalesModalIsOpen}

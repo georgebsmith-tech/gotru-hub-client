@@ -19,7 +19,7 @@ export const SalesMore = ({ isOpen = true, isSuspended, setIsSuspended }) => {
         </div>
         <div className="editsv">
           <img src="./images/user.svg" />
-          <h6>See Profile</h6>
+          <Link to="/customer-profile">See Profile</Link>
         </div>
         <div
           className="editsv"

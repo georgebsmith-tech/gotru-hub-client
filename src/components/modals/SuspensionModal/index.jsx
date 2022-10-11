@@ -1,10 +1,21 @@
-import React from "react";
+import React, { useState, useRef } from 'react';
 export const SuspensionModal = ({
   closeModal,
   isOpen,
   setIsSuspended,
   isSuspended,
-}) => (
+}) => {
+  const [date1, setDate1] = useState("");
+  const inputDate1 = useRef(null);
+ 
+  const handleChange1 = (e) => {
+    setDate1(e.target.value);
+  }
+
+  const handleClick1 = (event) => {
+    inputDate1.current.click();
+  }
+  return(
   <div
     style={{
       position: "fixed",
@@ -38,9 +49,7 @@ export const SuspensionModal = ({
         <div className="suspendEmployee">
           <h3>Suspend Employee</h3>
           <p style={{ whiteSpace: "normal" }}>
-            Are you sure you want to edit this time? Editing this time means the
-            employee’s time in and time out would be modified and it would
-            affect when they get to work.
+          Are you sure you want to suspend Emmanuel Joseph? The suspension would mean this employee would not be able to access this platform for specified duration.
           </p>
         </div>
         <div>
@@ -49,15 +58,15 @@ export const SuspensionModal = ({
             <textarea
               cols="50"
               rows="5"
-              placeholder="Enter you reason for the time edit"
+              placeholder="Enter you reason for suspension"
             ></textarea>
           </div>
           <div className="timeholds">
             <div>
               <h5 className="namefive">Start Date</h5>
               <div className="clock">
-                <input type="text" placeholder="Select date" />
-                <img src="./images/clock.svg" />
+                <input className="date1" onChange={handleChange1} value={date1} type="date" ref={inputDate1} placeholder="Select date" />
+                <img onClick={handleClick1} src="./images/calendar.svg" />
               </div>
             </div>
             <div>
@@ -82,3 +91,4 @@ export const SuspensionModal = ({
     </div>
   </div>
 );
+};

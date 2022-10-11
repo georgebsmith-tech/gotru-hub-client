@@ -13,7 +13,7 @@ export const MainLayout = ({ children }) => {
 
       <main
         style={{
-          padding: "32px 75px",
+          padding: "48px 75px",
           width: "100%",
           height: "100vh",
           overflow: "auto",
